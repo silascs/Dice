@@ -1,5 +1,6 @@
 
 int dots;
+int sum;
 
 void setup()
 {
@@ -8,6 +9,8 @@ void setup()
 }
 void draw()
 {
+	sum = 0;
+	textAlign(CENTER, CENTER);
 	
 	for (int y = 0; y < 801; y += 100)
 	{
@@ -16,8 +19,11 @@ void draw()
 			Die bob = new Die(x, y);
 			bob.show();
 			bob.roll();
+			sum += dots;
 		}
 	}
+	textSize(100);
+	text(sum, 400, 400);
 }
 void mousePressed()
 {
